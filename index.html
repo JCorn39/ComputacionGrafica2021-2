@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3-Proyecto Base</title>
+  <script type="module" src="./src/app.js"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <div id="renderScene">
+  <div id="backBtn">Volver</div>
+  <div id="createCubeBtn">Crear Cubo</div>
+  <div id="createSphereBtn">Crear Esfera</div>
+  <div id="createSpotLightBtn">Crear SpotLight</div>
+  <div id="createAmbientLightBtn">Crear AmbientLight</div>
+  <div id="createDirectLightBtn">Crear DirectLight</div>
+  <div id="createPointLightBtn">Crear PointLight</div>
+
+
+  </div>
+  <div id="content">
+    <div class="btnOption small" data-size="10">
+      <div class="title">Small</div>
+      <span>10x10</span>
+    </div>
+    <div class="btnOption medium" data-size="20">
+      <div class="title">Medium</div>
+      <span>20x20</span>
+    </div>
+    <div class="btnOption big" data-size="40">
+      <div class="title">Big</div>
+      <span>40x40</span>
+    </div>
+    <div class=" custom">
+      <div class="title">Custom</div>
+      <span>?x?</span>
+        <input type="text" name="data-size" id="data-size">
+        <input type="submit" value="send" id="Custom">
+    </div> 
+  </div>
+
+  <script type="module">
+    import { main, reset, cleanGUI, createCubeGeneric, createSphereGeneric,createSpoLightGeneric,createAmbientLightGeneric,createDirectLightGeneric,createPointLightGeneric } from './src/app.js';
+
+    const options = document.querySelectorAll('.btnOption');
+    const content = document.querySelector('#content');
+    const backBtn = document.querySelector('#backBtn');
+    const createCubeBtn = document.querySelector('#createCubeBtn');
+    const createSphereBtn = document.querySelector('#createSphereBtn')
+    const createSpotLightBtn = document.querySelector('#createSpotLightBtn');
+    const createAmbientLightBtn = document.querySelector('#createAmbientLightBtn');
+    const createDirectLightBtn = document.querySelector('#createDirectLightBtn');
+    const createPointLightBtn = document.querySelector('#createPointLightBtn');
+    const send = document.querySelectorAll('#Custom');
+    let size = 10;
+
+    options.forEach(optionSelected => {
+      optionSelected.onclick = function(){
+        const optionSize = this.dataset.size;
+        size = optionSize;
+        toogleContent();
+        main(size);
+      }
+    });
+
+    Custom.onclick = function(){
+      const optionSize = document.getElementById("data-size").value;
+        size = optionSize;
+        toogleContent();
+        main(size);
+    }
+
+    backBtn.onclick = function(){
+      toogleContent();
+      cleanGUI();
+      reset();
+    }
+
+    createCubeBtn.onclick = function(){
+      createCubeGeneric();
+    }
+    createSphereBtn.onclick = function(){
+      createSphereGeneric();
+    }
+    createSpotLightBtn.onclick = function(){
+      createSpoLightGeneric();
+    }
+    createAmbientLightBtn.onclick = function(){
+      createAmbientLightGeneric();
+    }
+    createDirectLightBtn.onclick = function(){
+      createDirectLightGeneric();
+    }
+    createPointLightBtn.onclick = function(){
+      createPointLightGeneric();
+    }
+    
+
+    function toogleContent (){
+      content.style.display = content.style.display == 'none' ? 'flex' : 'none';
+    }
+  </script>
+</body>
+
+</html>
