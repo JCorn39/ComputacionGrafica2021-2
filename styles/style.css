@@ -29,8 +29,12 @@ body #backBtn {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
   width: 20vw;
-  
 }
+
+body #backBtn:hover {
+  transform: scale(0.988);
+}
+
 
 body #renderScene {
   display: flex;
@@ -55,8 +59,11 @@ body #renderScene #createCubeBtn {
 	text-shadow:0px 1px 0px #3d768a;
 }
 
+body #createCubeBtn:hover {
+  transform: scale(0.988);
+}
 
- body #renderScene #createSphereBtn {
+body #renderScene #createSphereBtn {
   box-shadow: 3px 4px 0px 0px #1564ad;
 	background-color:#79bbff;
 	border-radius:18px;
@@ -70,6 +77,10 @@ body #renderScene #createCubeBtn {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #528ecc;
   
+}
+
+body #createSphereBtn:hover {
+  transform: scale(0.988);
 }
 
 body #renderScene #createAmbientLightBtn {
@@ -88,6 +99,10 @@ body #renderScene #createAmbientLightBtn {
   
 }
 
+body #createAmbientLightBtn:hover {
+  transform: scale(0.988);
+}
+
 body #renderScene #createSpotLightBtn {
   box-shadow: 3px 4px 0px 0px #968d5f;
 	background-color:#f0c911;
@@ -101,8 +116,12 @@ body #renderScene #createSpotLightBtn {
 	padding:13px 39px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ded17c;
-  
 }
+
+body #createSpotLightBtn:hover {
+  transform: scale(0.988);
+}
+
 
 body #renderScene #createDirectLightBtn {
   box-shadow: 3px 4px 0px 0px #968d5f;
@@ -117,7 +136,10 @@ body #renderScene #createDirectLightBtn {
 	padding:13px 39px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ded17c;
-  
+}
+
+body #createDirectLightBtn:hover {
+  transform: scale(0.988);
 }
 
 body #renderScene #createPointLightBtn {
@@ -133,7 +155,10 @@ body #renderScene #createPointLightBtn {
 	padding:13px 39px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ded17c;
-  
+}
+
+body #createPointLightBtn:hover {
+  transform: scale(0.988);
 }
 
 body #content {
